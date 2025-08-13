@@ -1,34 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Same head as index.html -->
-  <title>About SoulSync</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About SoulSync | Traditional Wisdom for Modern Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5e35b1;
+            --secondary: #ffab00;
+            --accent: #7c4dff;
+            --light: #ede7f6;
+            --dark: #311b92;
+            --text: #212121;
+            --text-light: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background-color: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Marcellus', serif;
+            font-size: 28px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(94,53,177,0.9), rgba(124,77,255,0.8)), 
+                        url('images/about-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Marcellus', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        /* Content Sections */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Marcellus', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0 auto;
+        }
+        
+        .content-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+        
+        .content-card p {
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background-color: var(--light);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+        }
+        
+        .credentials-list {
+            list-style-type: none;
+            margin: 30px 0;
+        }
+        
+        .credentials-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .credentials-list li:before {
+            content: "•";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        
+        .approach-steps {
+            counter-reset: step-counter;
+            margin: 40px 0;
+        }
+        
+        .approach-step {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 30px;
+        }
+        
+        .approach-step:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Marcellus', serif;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .content-card {
+                padding: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Same header as index.html -->
-  
-  <section class="about-section">
-    <h1>Our Journey & Credentials</h1>
-    
-    <div class="bio">
-      <h2>Riddhi - Founder</h2>
-      <ul>
-        <li>25+ years in Vastu and Astrology</li>
-        <li>Studied under renowned gurus</li>
-        <li>60+ consultations worldwide</li>
-      </ul>
-    </div>
-    
-    <div class="testimonials">
-      <h2>Client Experiences</h2>
-      <div class="testimonial">
-        <blockquote>"The guidance helped me see a new path..."</blockquote>
-        <cite>- Priya Sharma, Jaipur</cite>
-      </div>
-      <!-- More testimonials -->
-    </div>
-  </section>
-  
-  <!-- Same footer as index.html -->
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SoulSync</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="services/">Services</a>
+                    <a href="consultation/">Consultation</a>
+                    <a href="blog/">Blog</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Our Sacred Journey</h1>
+            <p>Bridging ancient wisdom with modern life challenges</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="content-card">
+                <h2 style="font-family: 'Marcellus', serif; color: var(--primary); margin-bottom: 20px;">About SoulSync</h2>
+                <p>At SoulSync, we believe that life's challenges can be understood and eased through the wisdom of age-old traditions. Our work is built on a deep respect for India's cultural heritage and a passion for helping people find harmony in their personal, family, and professional lives.</p>
+                
+                <div class="divider" style="margin: 40px auto; width: 50%; height: 1px; background: linear-gradient(to right, transparent, #ddd, transparent);"></div>
+                
+                <h2 style="font-family: 'Marcellus', serif; color: var(--primary); margin: 40px 0 20px;">Credentials & Background</h2>
+                <ul class="credentials-list">
+                    <li><strong>Riddhi</strong> – Practitioner of Vastu Shastra, Astrology, Palmistry, and other traditional sciences for over 25 years.</li>
+                    <li>Studied under respected gurus and mentors in Vedic Astrology and Vastu.</li>
+                    <li>Experienced in Feng Shui integration with Indian systems for a modern, global approach.</li>
+                    <li>Conducted 60+ consultations across India and abroad.</li>
+                    <li>Special focus on family harmony, relationship issues, career guidance, and spiritual energy balancing.</li>
+                </ul>
+                
+                <div class="divider" style="margin: 40px auto; width: 50%; height: 1px; background: linear-gradient(to right, transparent, #ddd, transparent);"></div>
+                
+                <h2 style="font-family: 'Marcellus', serif; color: var(--primary); margin: 40px 0 20px;">Our Approach</h2>
+                <p>We don't believe in one-size-fits-all remedies. Every person's life path is unique, and so are the solutions.</p>
+                
+                <div class="highlight-box">
+                    <p style="font-weight: 600; margin-bottom: 10px;">Sacred Consultation Process</p>
+                </div>
+                
+                <div class="approach-steps">
+                    <div class="approach-step">
+                        <h3 style="font-family: 'Montserrat', sans-serif; color: var(--primary); margin-bottom: 10px;">Deep Listening</h3>
+                        <p>We begin by listening deeply to your concerns, creating a safe space for you to share your challenges without judgment.</p>
+                    </div>
+                    <div class="approach-step">
+                        <h3 style="font-family: 'Montserrat', sans-serif; color: var(--primary); margin-bottom: 10px;">Holistic Analysis</h3>
+                        <p>Using Vastu, Kundli, Feng Shui, and other relevant systems, we analyze your situation from multiple spiritual perspectives.</p>
+                    </div>
+                    <div class="approach-step">
+                        <h3 style="font-family: 'Montserrat', sans-serif; color: var(--primary); margin-bottom: 10px;">Personalized Remedies</h3>
+                        <p>We offer practical, faith-based solutions tailored to your unique circumstances and belief system.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <p>All advice is shared with sensitivity, confidentiality, and respect for your beliefs. We honor your journey and provide guidance without imposing our views.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:contact@soulsync.com">Contact Us</a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> SoulSync. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
