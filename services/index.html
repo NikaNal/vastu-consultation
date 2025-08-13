@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | SoulSync Spiritual Guidance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5e35b1;
+            --secondary: #ffab00;
+            --accent: #7c4dff;
+            --light: #ede7f6;
+            --dark: #311b92;
+            --text: #212121;
+            --text-light: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background-color: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Marcellus', serif;
+            font-size: 28px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(94,53,177,0.9), rgba(124,77,255,0.8)), 
+                        url('../images/services-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Marcellus', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        /* Content Sections */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Marcellus', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0 auto;
+        }
+        
+        /* Services Intro */
+        .intro-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .service-header {
+            padding: 30px 30px 20px;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .service-header h3 {
+            font-family: 'Marcellus', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .service-body {
+            padding: 20px 30px 30px;
+        }
+        
+        .service-body ul {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+        
+        .service-body li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .service-body li:before {
+            content: "•";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        .best-for {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        
+        .best-for strong {
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SoulSync</div>
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../about.html">About</a>
+                    <a href="index.html" class="active">Services</a>
+                    <a href="../consultation/">Consultation</a>
+                    <a href="../blog/">Blog</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sacred Services</h1>
+            <p>Traditional wisdom for modern life challenges</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <div class="intro-card">
+                <h2 style="font-family: 'Marcellus', serif; color: var(--primary); margin-bottom: 20px;">Our Spiritual Offerings</h2>
+                <p>We offer personalized, faith-based guidance rooted in Vastu Shastra, Feng Shui, Astrology, Palmistry, Tantra-Mantra, Kundli, and other traditional Indian knowledge systems.</p>
+                <p><strong>All services are confidential, respectful, and meant to complement — not replace — medical, psychological, or legal assistance you may already be receiving.</strong></p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">❤️</div>
+                        <h3>Love & Relationship Guidance</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Whether it's rekindling lost love, improving understanding with a partner, or attracting positive relationships, we provide remedies and lifestyle suggestions based on traditional spiritual practices.</p>
+                        <div class="best-for">
+                            <strong>Best suited for:</strong>
+                            <ul>
+                                <li>Relationship harmony</li>
+                                <li>Marriage concerns</li>
+                                <li>Trust-building</li>
+                                <li>Soulmate alignment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🏡</div>
+                        <h3>Family & Home Harmony</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Home is where energy begins. Using Vastu Shastra and Feng Shui, we help you remove negative influences and restore peace in your household.</p>
+                        <div class="best-for">
+                            <strong>Best suited for:</strong>
+                            <ul>
+                                <li>Family disputes</li>
+                                <li>Communication gaps</li>
+                                <li>Health & happiness at home</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">📈</div>
+                        <h3>Career & Business Advice</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>From workplace stress to business growth challenges, we align your environment and energy to attract opportunities.</p>
+                        <div class="best-for">
+                            <strong>Best suited for:</strong>
+                            <ul>
+                                <li>Job promotions</li>
+                                <li>Business expansion</li>
+                                <li>Overcoming stagnation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🌿</div>
+                        <h3>Mental & Emotional Wellness</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Through mantras, meditation methods, and aura cleansing rituals, we help bring mental clarity and emotional strength.</p>
+                        <div class="best-for">
+                            <strong>Best suited for:</strong>
+                            <ul>
+                                <li>Stress & anxiety</li>
+                                <li>Lack of focus</li>
+                                <li>Decision-making issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🌸</div>
+                        <h3>Health & Vitality Balancing</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Using traditional remedies and energy corrections, we work on restoring balance to support your body's natural healing abilities.</p>
+                        <div class="best-for">
+                            <strong>Best suited for:</strong>
+                            <ul>
+                                <li>Low energy</li>
+                                <li>Recurring illness</li>
+                                <li>Overall vitality</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">⚖️</div>
+                        <h3>Legal & Dispute Energy Remedies</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>While we do not give legal advice, certain traditional practices are believed to clear negative influences and help in smoother resolution of disputes.</p>
+                        <div class="best-for">
+                            <strong>Best suited for:</strong>
+                            <ul>
+                                <li>Ongoing conflicts</li>
+                                <li>Court cases</li>
+                                <li>Settlements (alongside legal counsel)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">✨</div>
+                        <h3>Personal Spiritual Growth</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>For those seeking deeper connection with themselves and the universe, we offer spiritual guidance, meditation methods, and karmic balancing suggestions.</p>
+                        <div class="best-for">
+                            <strong>Best suited for:</strong>
+                            <ul>
+                                <li>Self-discovery</li>
+                                <li>Inner peace</li>
+                                <li>Faith-building</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="mailto:contact@soulsync.com">Contact Us</a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> SoulSync. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
