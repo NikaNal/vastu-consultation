@@ -182,3 +182,42 @@ header {
         font-size: 24px;
     }
 }
+/* Add to styles.css */
+.main-nav {
+    background: #333;
+    padding: 15px 0;
+}
+
+.main-nav a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 15px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
