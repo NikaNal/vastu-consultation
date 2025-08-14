@@ -1,65 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detailed Vastu consultation services and packages">
-    <title>Vastu Services | Detailed Consultation Packages</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Same head as index.html -->
+  <title>Book Consultation | SoulSync</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header class="service-header">
-        <div class="container">
-            <h1>Our Vastu Consultation Services</h1>
-            <p>Tailored solutions for your specific needs</p>
-        </div>
-    </header>
+  <!-- Same header as index.html -->
+  <header>
+    <div class="logo">SoulSync</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="testimonials.html">What People Say</a>
+      <a href="services/index.html">Services</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="../index.html#contact" class="cta-button">Contact</a>
+    </nav>
+  </header>
+  
+  <form id="consultation-form" class="staggered-form">
+    <!-- Step 1: Personal Details -->
+    <div class="form-step active" data-step="1">
+      <h2>Your Basic Information</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Mobile (with OTP verification)" id="mobile-input" required>
+      
+      <!-- Added Address Fields -->
+      <div class="address-fields">
+        <input type="text" placeholder="House No." required>
+        <input type="text" placeholder="Street" required>
+        <input type="text" placeholder="Area/Locality" required>
+        <input type="text" placeholder="City" required>
+        <input type="text" placeholder="State" required>
+        <input type="text" placeholder="Pincode" required>
+      </div>
+      
+      <div id="recaptcha-container"></div>
+      <button type="button" class="next-step">Continue</button>
+    </div>
 
-    <section class="service-details">
-        <div class="container">
-            <div class="service-tabs">
-                <button class="tab-btn active" data-tab="residential">Residential</button>
-                <button class="tab-btn" data-tab="commercial">Commercial</button>
-                <button class="tab-btn" data-tab="construction">New Construction</button>
-            </div>
+    <!-- Step 2: Problem Details -->
+    <div class="form-step" data-step="2">
+      <h2>Describe Your Concern</h2>
+      <select required>
+        <option value="">Select Problem Category</option>
+        <option>Marriage issues</option>
+        <option>Career growth</option>
+        <option>Health concerns</option>
+        <option>Financial problems</option>
+        <option>Family disputes</option>
+        <option>Vastu consultation</option>
+      </select>
+      <textarea placeholder="Explain in detail (English/Hindi/Regional language)..." rows="5" required></textarea>
+      <label>Upload Files (Optional):</label>
+      <input type="file" accept=".jpg,.png,.pdf">
+      <button type="button" class="prev-step">Back</button>
+      <button type="button" class="next-step">Continue</button>
+    </div>
 
-            <div class="tab-content active" id="residential">
-                <h2>Residential Vastu Consultation</h2>
-                <div class="service-cards">
-                    <div class="service-card">
-                        <h3>Basic Home Analysis</h3>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Room-by-room evaluation</li>
-                            <li><i class="fas fa-check"></i> 5 corrective suggestions</li>
-                            <li><i class="fas fa-check"></i> Follow-up email support</li>
-                        </ul>
-                        <a href="#contact" class="btn">Book Now</a>
-                    </div>
-                    <!-- Add more service packages -->
-                </div>
-            </div>
-
-            <!-- Add other tab contents -->
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <h2>Client Experiences</h2>
-            <div class="testimonial-slider">
-                <!-- Add testimonials -->
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <!-- Same contact form as main page -->
-    </section>
-
-    <footer>
-        <!-- Same footer as main page -->
-    </footer>
-    <script src="../script.js"></script>
+    <!-- Step 3: Payment -->
+    <div class="form-step" data-step="3">
+      <h2>Secure Payment</h2>
+      <div class="payment-options">
+        <!-- Razorpay integration would go here -->
+      </div>
+      <div class="legal-checkbox">
+        <input type="checkbox" id="undertaking" required>
+        <label for="undertaking">I agree to the comprehensive undertaking</label>
+      </div>
+      <button type="submit" class="submit-btn">Pay & Submit (₹999)</button>
+    </div>
+  </form>
+  
+  <!-- Same footer as index.html -->
+  <footer>
+    <p>© 2023 SoulSync. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@soulsync.example">info@soulsync.example</a></p>
+  </footer>
+  
+  <script src="../js/otp.js"></script>
 </body>
 </html>
