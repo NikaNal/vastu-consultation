@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Same head as index.html -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Consultation | SoulSync</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Additional styles for address fields */
+    .address-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .address-fields input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .address-fields {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Same header as index.html -->
   <header>
     <div class="logo">SoulSync</div>
     <nav>
@@ -28,14 +51,18 @@
       <input type="email" placeholder="Email" required>
       <input type="tel" placeholder="Mobile (with OTP verification)" id="mobile-input" required>
       
-      <!-- Added Address Fields -->
+      <h3>Address Details</h3>
       <div class="address-fields">
-        <input type="text" placeholder="House No." required>
-        <input type="text" placeholder="Street" required>
-        <input type="text" placeholder="Area/Locality" required>
-        <input type="text" placeholder="City" required>
-        <input type="text" placeholder="State" required>
-        <input type="text" placeholder="Pincode" required>
+        <div>
+          <input type="text" placeholder="House No." required>
+          <input type="text" placeholder="Street" required>
+          <input type="text" placeholder="Area/Locality" required>
+        </div>
+        <div>
+          <input type="text" placeholder="City" required>
+          <input type="text" placeholder="State" required>
+          <input type="text" placeholder="Pincode" required>
+        </div>
       </div>
       
       <div id="recaptcha-container"></div>
@@ -75,7 +102,6 @@
     </div>
   </form>
   
-  <!-- Same footer as index.html -->
   <footer>
     <p>© 2023 SoulSync. All rights reserved.</p>
     <p>Contact: <a href="mailto:info@soulsync.example">info@soulsync.example</a></p>
