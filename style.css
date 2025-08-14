@@ -1,184 +1,247 @@
-/* Base Styles */
+/* === FONT & BASE STYLES === */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
-  --primary: #6a1b9a;
-  --secondary: #ff9800;
-  --light-bg: #f3e5f5;
+  --primary: #c29545; /* warm golden brown */
+  --primary-dark: #a27832;
+  --secondary: #f5f0e6; /* soft cream */
+  --text-dark: #333;
+  --text-light: #fff;
+  --bg-light: #faf8f5;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
   line-height: 1.6;
-  margin: 0;
-  color: #333;
 }
 
-header {
-  background: var(--primary);
-  color: white;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* === CONTAINERS === */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.cta-button {
+/* === HEADER === */
+.site-header {
   background: var(--secondary);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 4px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  display: inline-block;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.brand-logo {
+  height: 50px;
+  width: auto;
+  margin-right: 0.5rem;
+  border-radius: var(--radius);
 }
 
-/* Form Styles */
-.staggered-form {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
 }
 
-.form-step {
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--primary);
+}
+
+/* Mobile nav */
+#navToggle {
   display: none;
 }
 
-.form-step.active {
-  display: block;
+/* === HERO === */
+.hero {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, var(--secondary), #fff);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .trust-points {
-    grid-template-columns: 1fr;
-  }
-}
-/* Testimonials Page Specific */
-.testimonials-container h1 {
-  color: #6a1b9a;
-  border-bottom: 2px solid #f3e5f5;
-  padding-bottom: 0.5rem;
-}
-
-.testimonial-author {
-  color: #6a1b9a;
-}
-
-.testimonial-author span {
-  color: #666;
-  font-weight: 400;
-}
-.address-fields {
+.hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: 2rem;
+  align-items: center;
 }
 
-.address-fields input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.hero-copy h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
 }
 
+.hero-copy .lead {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions .btn {
+  margin-right: 0.5rem;
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: var(--text-light);
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn.ghost {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn.ghost:hover {
+  background: var(--primary);
+  color: var(--text-light);
+}
+
+/* === CARDS / SERVICES === */
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px var(--shadow);
+}
+
+.card h3 {
+  font-family: 'Merriweather', serif;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.card-link {
+  text-decoration: none;
+  color: var(--primary-dark);
+  font-weight: 500;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* === FOOTER === */
+.site-footer {
+  background: var(--primary-dark);
+  color: var(--text-light);
+  padding: 2rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .address-fields {
+  .hero-grid {
     grid-template-columns: 1fr;
+    text-align: center;
   }
-}
-/* Add these new styles to your existing CSS */
 
-/* Pulse animation for CTA button */
-.pulse-btn {
-    animation: pulse 2s infinite;
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-}
+  .hero-image img {
+    max-width: 90%;
+    margin: auto;
+  }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--secondary);
+    padding: 1rem;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    box-shadow: 0 4px 8px var(--shadow);
+  }
 
-/* Contact section styling */
-.contact-section {
-    background-color: #f9f9f9;
-    padding: 50px 0;
-}
-
-.contact-container {
+  .main-nav ul.open {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+  }
 
-.contact-info {
-    flex: 1;
-    min-width: 300px;
-}
-
-.contact-info i {
-    margin-right: 10px;
-    color: #4CAF50;
-}
-
-#contactForm {
-    flex: 1;
-    min-width: 300px;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-group textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .cta-banner h2 {
-        font-size: 24px;
-    }
+  #navToggle {
+    display: block;
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+  }
 }
