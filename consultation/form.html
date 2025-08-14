@@ -3,9 +3,22 @@
 <head>
   <!-- Same head as index.html -->
   <title>Book Consultation | SoulSync</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <!-- Same header as index.html -->
+  <header>
+    <div class="logo">SoulSync</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="testimonials.html">What People Say</a>
+      <a href="services/index.html">Services</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="../index.html#contact" class="cta-button">Contact</a>
+    </nav>
+  </header>
   
   <form id="consultation-form" class="staggered-form">
     <!-- Step 1: Personal Details -->
@@ -14,6 +27,17 @@
       <input type="text" placeholder="Full Name" required>
       <input type="email" placeholder="Email" required>
       <input type="tel" placeholder="Mobile (with OTP verification)" id="mobile-input" required>
+      
+      <!-- Added Address Fields -->
+      <div class="address-fields">
+        <input type="text" placeholder="House No." required>
+        <input type="text" placeholder="Street" required>
+        <input type="text" placeholder="Area/Locality" required>
+        <input type="text" placeholder="City" required>
+        <input type="text" placeholder="State" required>
+        <input type="text" placeholder="Pincode" required>
+      </div>
+      
       <div id="recaptcha-container"></div>
       <button type="button" class="next-step">Continue</button>
     </div>
@@ -25,7 +49,10 @@
         <option value="">Select Problem Category</option>
         <option>Marriage issues</option>
         <option>Career growth</option>
-        <!-- All other options -->
+        <option>Health concerns</option>
+        <option>Financial problems</option>
+        <option>Family disputes</option>
+        <option>Vastu consultation</option>
       </select>
       <textarea placeholder="Explain in detail (English/Hindi/Regional language)..." rows="5" required></textarea>
       <label>Upload Files (Optional):</label>
@@ -49,7 +76,11 @@
   </form>
   
   <!-- Same footer as index.html -->
+  <footer>
+    <p>© 2023 SoulSync. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@soulsync.example">info@soulsync.example</a></p>
+  </footer>
+  
   <script src="../js/otp.js"></script>
 </body>
 </html>
-<a href="testimonials.html">What People Say</a>
