@@ -66,3 +66,18 @@ header {
     grid-template-columns: 1fr;
   }
 }
+/* Testimonials Page Specific */
+.testimonials-container h1 {
+  color: #6a1b9a;
+  border-bottom: 2px solid #f3e5f5;
+  padding-bottom: 0.5rem;
+}
+
+.testimonial-author {
+  color: #6a1b9a;
+}
+
+.testimonial-author span {
+  color: #666;
+  font-weight: 400;
+}
