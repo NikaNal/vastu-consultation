@@ -148,6 +148,12 @@
             gap: 20px;
         }
         
+        .address-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
         .file-upload {
             border: 2px dashed #ddd;
             border-radius: 6px;
@@ -242,7 +248,8 @@
                 padding: 30px;
             }
             
-            .form-row {
+            .form-row,
+            .address-row {
                 grid-template-columns: 1fr;
                 gap: 0;
             }
@@ -258,6 +265,7 @@
                 <div class="nav-links">
                     <a href="../index.html">Home</a>
                     <a href="../about.html">About</a>
+                    <a href="testimonials.html">What People Say</a>
                     <a href="../services/">Services</a>
                     <a href="index.html" class="active">Submit Problem</a>
                     <a href="../blog/">Blog</a>
@@ -311,6 +319,41 @@
                         <div class="form-group">
                             <label for="birth-place">Place of Birth *</label>
                             <input type="text" id="birth-place" name="birth-place" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Added Address Fields -->
+                    <h3 style="margin: 30px 0 15px; color: var(--primary);">Current Address</h3>
+                    <div class="address-row">
+                        <div class="form-group">
+                            <label for="house-no">House No. *</label>
+                            <input type="text" id="house-no" name="house-no" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="street">Street *</label>
+                            <input type="text" id="street" name="street" required>
+                        </div>
+                    </div>
+                    
+                    <div class="address-row">
+                        <div class="form-group">
+                            <label for="area">Area/Locality *</label>
+                            <input type="text" id="area" name="area" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                    </div>
+                    
+                    <div class="address-row">
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pincode *</label>
+                            <input type="text" id="pincode" name="pincode" required>
                         </div>
                     </div>
                     
@@ -428,4 +471,3 @@
     </script>
 </body>
 </html>
-<a href="testimonials.html">What People Say</a>
