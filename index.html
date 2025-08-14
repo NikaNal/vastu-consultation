@@ -1,432 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoulSync | Spiritual Guidance & Traditional Consultation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #5e35b1;
-            --secondary: #ffab00;
-            --accent: #7c4dff;
-            --light: #ede7f6;
-            --dark: #311b92;
-            --text: #212121;
-            --text-light: #757575;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            background-color: #fafafa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-family: 'Marcellus', serif;
-            font-size: 28px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(94,53,177,0.9), rgba(124,77,255,0.8)), 
-                        url('images/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 180px 0 100px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-family: 'Marcellus', serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--dark);
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .btn:hover {
-            background-color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Content Sections */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-family: 'Marcellus', serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .section-title .divider {
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            margin: 0 auto;
-        }
-        
-        /* About Section */
-        .about-content {
-            background-color: white;
-            border-radius: 10px;
-            padding: 50px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
-            margin-bottom: 60px;
-        }
-        
-        .about-content p {
-            margin-bottom: 20px;
-        }
-        
-        .notice-box {
-            background-color: var(--light);
-            border-left: 4px solid var(--secondary);
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 30px 0;
-        }
-        
-        /* Trust Section */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .trust-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .trust-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .trust-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        /* Benefits Section */
-        .benefits-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .benefits-list {
-            background-color: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-        
-        .benefits-list h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-        
-        .benefits-list ul {
-            list-style-type: none;
-        }
-        
-        .benefits-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-        }
-        
-        .benefits-list li:before {
-            content: "✓";
-            color: var(--secondary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        /* Disclaimer Section */
-        .disclaimer-box {
-            background-color: var(--light);
-            border-radius: 10px;
-            padding: 40px;
-            text-align: center;
-            margin-top: 60px;
-        }
-        
-        .disclaimer-box h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .disclaimer-box p {
-            margin-bottom: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
-                gap: 15px;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .about-content, .benefits-list {
-                padding: 30px;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Professional Vastu consultation — home, office, vastu remedies, personalized guidance to balance energies and improve wellbeing." />
+  <meta name="theme-color" content="#F8F9FA" />
+  <title>Vastu Consultation — Balance Your Space</title>
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Vastu Consultation — Balance Your Space" />
+  <meta property="og:description" content="Personalized Vastu services for homes and workplaces. Easy online consultation, practical remedies, and experienced guidance." />
+  <meta property="og:type" content="website" />
+  <!-- Replace with your image URL if available -->
+  <meta property="og:image" content="kundli-blog.jpg" />
+
+  <!-- Stylesheet (keeps using your existing style.css) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicons (optional) -->
+  <link rel="icon" href="favicon.ico" />
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">SoulSync</div>
-                <div class="nav-links">
-                    <a href="#">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services/">Services</a>
-                    <a href="consultation/">Consultation</a>
-                    <a href="blog/">Blog</a>
-                </div>
-            </nav>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Vastu Consultation homepage">
+        <img src="kundli-blog.jpg" alt="Vastu logo" class="brand-logo" />
+        <span class="brand-name">Vastu Consultation</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <button id="navToggle" aria-expanded="false" aria-controls="navList">Menu</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="consultation.html">Consultation</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 id="hero-title">Bring harmony to your home & workplace</h1>
+        <p class="lead">
+          Personalized Vastu consultations — practical remedies & guidance to enhance wellbeing, prosperity and peace.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="consultation.html">Book a Consultation</a>
+          <a class="btn ghost" href="services.html">See Services</a>
         </div>
-    </header>
+      </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to Your Space of Faith & Guidance</h1>
-            <p>Life has its seasons — moments of joy, moments of challenge. Sometimes the weight of relationships, health, career, or personal struggles makes it hard to see the way forward.</p>
-            <a href="consultation/" class="btn">Begin Your Journey</a>
+      <figure class="hero-image" aria-hidden="true">
+        <!-- Decorative image, replace with an appropriate image -->
+        <img src="kundli-blog.jpg" alt="" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Services Summary -->
+  <section class="services" id="main" aria-labelledby="services-title">
+    <div class="container">
+      <h2 id="services-title">Our Services</h2>
+      <p class="muted">Tailored offerings for homes, offices, shops and more.</p>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Home Vastu</h3>
+          <p>Layout analysis, room placement suggestions, remedies that are practical and non-destructive.</p>
+          <a class="card-link" href="services.html#home">Learn more →</a>
+        </article>
+
+        <article class="card">
+          <h3>Office & Workspace</h3>
+          <p>Improve productivity & harmony with desk placement, entrance orientation, and energy flow recommendations.</p>
+          <a class="card-link" href="services.html#office">Learn more →</a>
+        </article>
+
+        <article class="card">
+          <h3>Remote Consultation</h3>
+          <p>Online sessions via video call: send plan/sketch and we’ll provide a detailed report with remedies.</p>
+          <a class="card-link" href="consultation.html">Book online →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="why-us">
+    <div class="container grid">
+      <div>
+        <h2>Why choose us?</h2>
+        <ul>
+          <li>Experienced consultants with practical, evidence-oriented remedies.</li>
+          <li>Respectful, inclusive approach — advice stays culturally sensitive and neutral.</li>
+          <li>Clear reports, affordable packages, and follow-up support.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>What to expect</h2>
+        <ol>
+          <li>Short intake form & site photos or plan</li>
+          <li>Consultation (online or in-person)</li>
+          <li>Detailed report with step-by-step remedies</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials preview -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What people say</h2>
+      <blockquote>
+        <p>"I saw immediate improvement in the energy of my home — practical remedies and warm guidance." — A satisfied client</p>
+      </blockquote>
+      <p class="small"><a href="testimonials.html">Read more testimonials →</a></p>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="contact-cta">
+    <div class="container cta-grid">
+      <div>
+        <h2>Ready to get started?</h2>
+        <p>Book a short discovery call or request an online report.</p>
+      </div>
+
+      <form id="contactForm" class="contact-form" action="mailto:info@example.com" method="post" enctype="text/plain" aria-label="Contact form">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send</button>
+          <a class="btn ghost" href="consultation.html">Book Consultation</a>
         </div>
-    </section>
+      </form>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section class="section">
-        <div class="container">
-            <div class="about-content">
-                <p>If you are here, it means your heart is looking for clarity… and we are here to walk with you in that search.</p>
-                <p>At SoulSync, we draw upon India's timeless traditional sciences — including Vastu Shastra, Feng Shui, Astrology (Kundli), Palmistry, Tantra-Mantra, and other spiritual practices that have been shared through generations.</p>
-                <p><strong>These are faith-based and spiritual in nature — not a substitute for medical treatment, legal advice, or psychological therapy.</strong></p>
-                
-                <div class="notice-box">
-                    <p style="font-weight: 600; margin-bottom: 10px;">✨ Continue Any Existing Support ✨</p>
-                    <p style="margin: 0;">If you are under medical care, legal consultation, or psychological guidance, please continue it alongside our services.</p>
-                </div>
-                
-                <p>Our role is to complement your journey — offering spiritual direction and traditional remedies to uplift your energy and environment.</p>
-            </div>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <h3>Vastu Consultation</h3>
+        <p class="muted">Practical Vastu guidance for modern living.</p>
+      </div>
 
-            <div class="section-title">
-                <h2>Why People Trust Us</h2>
-                <div class="divider"></div>
-            </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <h3>A Listening Heart</h3>
-                    <p>Every story is treated with respect, understanding, and care.</p>
-                </div>
-                <div class="trust-card">
-                    <h3>Complete Confidentiality</h3>
-                    <p>Your privacy is sacred.</p>
-                </div>
-                <div class="trust-card">
-                    <h3>Balanced Guidance</h3>
-                    <p>Practical steps blended with spiritual wisdom.</p>
-                </div>
-                <div class="trust-card">
-                    <h3>Approachable & Compassionate</h3>
-                    <p>Whether your challenge is personal, family-related, or career-based.</p>
-                </div>
-                <div class="trust-card">
-                    <h3>No False Claims</h3>
-                    <p>We guide in faith, never in empty promises.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="copyright">
+        <p>&copy; <span id="year"></span> Vastu Consultation — All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Benefits Section -->
-    <section class="section" style="background-color: var(--light);">
-        <div class="container">
-            <div class="section-title">
-                <h2>How We Can Help You</h2>
-                <div class="divider"></div>
-            </div>
+  <!-- Existing scripts (keeps your repository JS files) -->
+  <script>
+    // Small UX script to wire up nav toggle & dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-            <div class="benefits-container">
-                <div class="benefits-list">
-                    <h3>Personal Growth</h3>
-                    <ul>
-                        <li>Finding clarity in difficult decisions</li>
-                        <li>Creating a positive environment for growth</li>
-                        <li>Clearing negativity and balancing energy</li>
-                    </ul>
-                </div>
-                <div class="benefits-list">
-                    <h3>Relationships</h3>
-                    <ul>
-                        <li>Restoring peace and harmony at home</li>
-                        <li>Attracting love and healthy relationships</li>
-                        <li>Improving family connections</li>
-                    </ul>
-                </div>
-                <div class="benefits-list">
-                    <h3>Prosperity</h3>
-                    <ul>
-                        <li>Attracting opportunities and abundance</li>
-                        <li>Enhancing career growth</li>
-                        <li>Creating prosperous environments</li>
-                    </ul>
-                </div>
-            </div>
+    const navToggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    if (navToggle && navList) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navList.classList.toggle('open');
+      });
+    }
+  </script>
 
-            <div class="disclaimer-box">
-                <h3>Important Disclaimer</h3>
-                <p>Our services are based on traditional, cultural, and spiritual wisdom, meant for personal growth, inspiration, and faith.</p>
-                <p>Results may vary, and we make no guarantees of specific outcomes.</p>
-                <p>We do not replace qualified medical, psychological, legal, or financial professionals.</p>
-                <p style="font-style: italic; margin-top: 20px;">Here, your story matters. Your trust matters.<br>
-                Together, let us bring back the balance and positivity you seek.</p>
-            </div>
-
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="consultation/" class="btn">Begin Your Healing Journey</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="mailto:contact@soulsync.com">Contact Us</a>
-            </div>
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> SoulSync. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- load repo scripts if present -->
+  <script src="script.js" defer></script>
+  <script src="otp.js" defer></script>
 </body>
 </html>
