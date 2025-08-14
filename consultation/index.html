@@ -3,471 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Your Problem | SoulSync Consultation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #5e35b1;
-            --secondary: #ffab00;
-            --accent: #7c4dff;
-            --light: #ede7f6;
-            --dark: #311b92;
-            --text: #212121;
-            --text-light: #757575;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            background-color: #fafafa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-family: 'Marcellus', serif;
-            font-size: 28px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(94,53,177,0.9), rgba(124,77,255,0.8)), 
-                        url('../images/form-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 180px 0 100px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-family: 'Marcellus', serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        /* Form Section */
-        .form-section {
-            padding: 100px 0;
-        }
-        
-        .form-container {
-            background-color: white;
-            border-radius: 10px;
-            padding: 50px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .form-title {
-            font-family: 'Marcellus', serif;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .address-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .file-upload {
-            border: 2px dashed #ddd;
-            border-radius: 6px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
-        .file-upload input {
-            display: none;
-        }
-        
-        .file-upload label {
-            color: var(--primary);
-            font-weight: 500;
-            cursor: pointer;
-            display: block;
-        }
-        
-        .file-upload label:hover {
-            text-decoration: underline;
-        }
-        
-        .file-name {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        .submit-btn {
-            background-color: var(--secondary);
-            color: var(--dark);
-            border: none;
-            padding: 15px 30px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: block;
-            width: 100%;
-            margin-top: 30px;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
-                gap: 15px;
-            }
-            
-            .form-section {
-                padding: 60px 0;
-            }
-            
-            .form-container {
-                padding: 30px;
-            }
-            
-            .form-row,
-            .address-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-        }
-    </style>
+    <meta name="description" content="Detailed Vastu consultation services and packages">
+    <title>Vastu Services | Detailed Consultation Packages</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <header class="service-header">
         <div class="container">
-            <nav>
-                <div class="logo">SoulSync</div>
-                <div class="nav-links">
-                    <a href="../index.html">Home</a>
-                    <a href="../about.html">About</a>
-                    <a href="testimonials.html">What People Say</a>
-                    <a href="../services/">Services</a>
-                    <a href="index.html" class="active">Submit Problem</a>
-                    <a href="../blog/">Blog</a>
-                </div>
-            </nav>
+            <h1>Our Vastu Consultation Services</h1>
+            <p>Tailored solutions for your specific needs</p>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <section class="service-details">
         <div class="container">
-            <h1>Sacred Consultation Request</h1>
-            <p>Share your concerns confidentially with our spiritual guides</p>
+            <div class="service-tabs">
+                <button class="tab-btn active" data-tab="residential">Residential</button>
+                <button class="tab-btn" data-tab="commercial">Commercial</button>
+                <button class="tab-btn" data-tab="construction">New Construction</button>
+            </div>
+
+            <div class="tab-content active" id="residential">
+                <h2>Residential Vastu Consultation</h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <h3>Basic Home Analysis</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Room-by-room evaluation</li>
+                            <li><i class="fas fa-check"></i> 5 corrective suggestions</li>
+                            <li><i class="fas fa-check"></i> Follow-up email support</li>
+                        </ul>
+                        <a href="#contact" class="btn">Book Now</a>
+                    </div>
+                    <!-- Add more service packages -->
+                </div>
+            </div>
+
+            <!-- Add other tab contents -->
         </div>
     </section>
 
-    <!-- Form Section -->
-    <section class="form-section">
+    <section class="testimonials">
         <div class="container">
-            <div class="form-container">
-                <h2 class="form-title">Tell Us About Your Situation</h2>
-                
-                <form id="consultation-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dob">Date of Birth *</label>
-                            <input type="date" id="dob" name="dob" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="birth-time">Time of Birth *</label>
-                            <input type="time" id="birth-time" name="birth-time" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="birth-place">Place of Birth *</label>
-                            <input type="text" id="birth-place" name="birth-place" required>
-                        </div>
-                    </div>
-                    
-                    <!-- Added Address Fields -->
-                    <h3 style="margin: 30px 0 15px; color: var(--primary);">Current Address</h3>
-                    <div class="address-row">
-                        <div class="form-group">
-                            <label for="house-no">House No. *</label>
-                            <input type="text" id="house-no" name="house-no" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="street">Street *</label>
-                            <input type="text" id="street" name="street" required>
-                        </div>
-                    </div>
-                    
-                    <div class="address-row">
-                        <div class="form-group">
-                            <label for="area">Area/Locality *</label>
-                            <input type="text" id="area" name="area" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="city">City *</label>
-                            <input type="text" id="city" name="city" required>
-                        </div>
-                    </div>
-                    
-                    <div class="address-row">
-                        <div class="form-group">
-                            <label for="state">State *</label>
-                            <input type="text" id="state" name="state" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pincode">Pincode *</label>
-                            <input type="text" id="pincode" name="pincode" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="problem-category">Category of Problem *</label>
-                        <select id="problem-category" name="problem-category" required>
-                            <option value="">-- Select Problem Category --</option>
-                            <optgroup label="Family & Relationships">
-                                <option value="marriage-issues">Marriage issues</option>
-                                <option value="parenting">Parenting</option>
-                                <option value="disputes-relatives">Disputes with relatives</option>
-                                <option value="joint-family">Joint family harmony</option>
-                            </optgroup>
-                            <optgroup label="Love & Romance">
-                                <option value="finding-love">Finding love</option>
-                                <option value="relationship-compatibility">Relationship compatibility</option>
-                                <option value="breakup-issues">Breakup issues</option>
-                                <option value="rekindling-love">Rekindling love</option>
-                            </optgroup>
-                            <optgroup label="Career & Business">
-                                <option value="job-growth">Job growth</option>
-                                <option value="promotions">Promotions</option>
-                                <option value="business-prosperity">Business prosperity</option>
-                                <option value="partnerships">Partnerships</option>
-                            </optgroup>
-                            <optgroup label="Legal & Property">
-                                <option value="court-cases">Court cases</option>
-                                <option value="land-disputes">Land disputes</option>
-                                <option value="property-buying">Property buying/selling</option>
-                                <option value="vastu-new-property">Vastu for new property</option>
-                            </optgroup>
-                            <optgroup label="Financial">
-                                <option value="debt-problems">Debt problems</option>
-                                <option value="income-growth">Income growth</option>
-                                <option value="investments">Investments</option>
-                            </optgroup>
-                            <optgroup label="Health">
-                                <option value="chronic-illness">Chronic illness support</option>
-                                <option value="energy-imbalance">Energy imbalance</option>
-                                <option value="home-remedies">Home remedies (traditional systems only)</option>
-                            </optgroup>
-                            <optgroup label="Mental & Emotional">
-                                <option value="anxiety">Anxiety</option>
-                                <option value="stress-relief">Stress relief</option>
-                                <option value="confidence-building">Confidence building</option>
-                                <option value="peace-of-mind">Peace of mind</option>
-                            </optgroup>
-                            <optgroup label="Spiritual">
-                                <option value="meditation-guidance">Meditation guidance</option>
-                                <option value="kundli-dosha">Kundli dosha remedies</option>
-                                <option value="mantra-sadhana">Mantra sadhana</option>
-                            </optgroup>
-                            <option value="other">Other (please describe)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="problem-description">Detailed Description of Problem *</label>
-                        <textarea id="problem-description" name="problem-description" required placeholder="Please describe your situation in detail (you may write in English, Hindi, or any major Indian regional language)"></textarea>
-                    </div>
-                    
-                    <div class="file-upload">
-                        <input type="file" id="file-upload" name="file-upload" multiple accept=".jpg,.jpeg,.png,.pdf">
-                        <label for="file-upload">📁 Upload Supporting Files (Optional)</label>
-                        <p class="file-name">You may upload photos of your home, palm, kundli, or other relevant documents</p>
-                        <div id="file-list"></div>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Submit for Spiritual Guidance</button>
-                </form>
+            <h2>Client Experiences</h2>
+            <div class="testimonial-slider">
+                <!-- Add testimonials -->
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="contact" class="contact-section">
+        <!-- Same contact form as main page -->
+    </section>
+
     <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="../privacy-policy.html">Privacy Policy</a>
-                <a href="../terms.html">Terms of Service</a>
-                <a href="mailto:contact@soulsync.com">Contact Us</a>
-            </div>
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> SoulSync. All rights reserved.</p>
-        </div>
+        <!-- Same footer as main page -->
     </footer>
-
-    <script>
-        // File upload display
-        document.getElementById('file-upload').addEventListener('change', function(e) {
-            const fileList = document.getElementById('file-list');
-            fileList.innerHTML = '';
-            
-            if (this.files.length > 0) {
-                const list = document.createElement('ul');
-                list.style.marginTop = '10px';
-                list.style.fontSize = '0.9rem';
-                
-                for (let i = 0; i < this.files.length; i++) {
-                    const item = document.createElement('li');
-                    item.textContent = this.files[i].name;
-                    list.appendChild(item);
-                }
-                
-                fileList.appendChild(list);
-            }
-        });
-
-        // Form submission
-        document.getElementById('consultation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for sharing your concerns. Our spiritual guides will review your submission and respond within 48 hours.');
-            this.reset();
-            document.getElementById('file-list').innerHTML = '';
-        });
-    </script>
+    <script src="../script.js"></script>
 </body>
 </html>
