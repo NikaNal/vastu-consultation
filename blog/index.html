@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual Guidance Blog | SoulSync</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5e35b1;
+            --secondary: #ffab00;
+            --light: #ede7f6;
+            --dark: #311b92;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        
+        h1 {
+            font-family: 'Marcellus', serif;
+            color: var(--primary);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .articles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            padding: 20px;
+        }
+        
+        .article-title {
+            font-family: 'Marcellus', serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .article-meta {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-header">
+        <h1>Sacred Wisdom Blog</h1>
+        <p>Ancient knowledge for modern life challenges</p>
+    </div>
+    
+    <div class="articles-container">
+        <!-- Article 1 -->
+        <div class="article-card">
+            <img src="../images/kundli-matching.jpg" alt="Kundli Matching" class="article-image">
+            <div class="article-content">
+                <h2 class="article-title">Kundli Matching for Modern Relationships</h2>
+                <p class="article-excerpt">Discover how Vedic astrology's compatibility analysis can guide your personal connections...</p>
+                <div class="article-meta">June 15, 2023 · 8 min read</div>
+                <a href="kundli-matching.html" class="read-more">Read Article →</a>
+            </div>
+        </div>
+        
+        <!-- Article 2 -->
+        <div class="article-card">
+            <img src="../images/career-astrology.jpg" alt="Career Astrology" class="article-image">
+            <div class="article-content">
+                <h2 class="article-title">Astrology for Career Success</h2>
+                <p class="article-excerpt">Learn how your birth chart reveals professional strengths and ideal timing for growth...</p>
+                <div class="article-meta">June 22, 2023 · 7 min read</div>
+                <a href="career-astrology.html" class="read-more">Read Article →</a>
+            </div>
+        </div>
+        
+        <!-- Article 3 -->
+        <div class="article-card">
+            <img src="../images/tantra-spirituality.jpg" alt="Tantra Spirituality" class="article-image">
+            <div class="article-content">
+                <h2 class="article-title">Tantra for Spiritual Peace</h2>
+                <p class="article-excerpt">Ancient practices for modern well-being, from sacred intimacy to abundance consciousness...</p>
+                <div class="article-meta">June 29, 2023 · 9 min read</div>
+                <a href="tantra-spirituality.html" class="read-more">Read Article →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
